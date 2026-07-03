@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36930.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaHub", "IdeaHub\IdeaHub.csproj", "{633B9EF5-D4C2-4473-AA1C-EEC4B02540C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdeaHub.Application", "IdeaHub.Application", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdeaHub.Domain", "IdeaHub.Domain", "{BA1FC5FB-8483-4845-935D-E6E7096F1477}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdeaHub.API", "IdeaHub.API", "{2C317BB5-E789-4C2A-AAF3-2E0A2944B5A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdeaHub.Infrastructure", "IdeaHub.Infrastructure", "{4D66D164-3F82-4825-B9EA-E201BAC58052}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{9F5669EE-0343-47BE-ADE6-0312B7DBF928}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{633B9EF5-D4C2-4473-AA1C-EEC4B02540C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633B9EF5-D4C2-4473-AA1C-EEC4B02540C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633B9EF5-D4C2-4473-AA1C-EEC4B02540C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633B9EF5-D4C2-4473-AA1C-EEC4B02540C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{633B9EF5-D4C2-4473-AA1C-EEC4B02540C2} = {2C317BB5-E789-4C2A-AAF3-2E0A2944B5A0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {033ACC53-110F-4F5D-B48A-0F40C17E192E}
+	EndGlobalSection
+EndGlobal
