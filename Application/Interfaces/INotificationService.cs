@@ -24,7 +24,7 @@ namespace Application.Interfaces
     }
     public interface INotificationHubContext
     {
-        Task SendMessage(string message);
+       // Task SendMessage(string message);
         Task JoinGroupAsync(string groupName);
         Task LeaveGroupAsync(string groupName);
         Task SendMessageToAllAsync(string title,string message);

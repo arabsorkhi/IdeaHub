@@ -75,11 +75,13 @@ namespace Domain.Entity
             Confidential, // با رمز (محرمانه)
             Public       // عمومی
         }
-        public class BlindField
-        {
-            // فیلدهایی که فقط بعد از NDA دیده می‌شن
-            public string EncryptedFieldName { get; set; }
-            public string EncryptedFieldValue { get; set; }
-        }
+    public class BlindField
+    {
+        [Key]
+        public Guid Id { get; set; } = Guid.NewGuid();
+        // فیلدهایی که فقط بعد از NDA دیده می‌شن
+        public string EncryptedFieldName { get; set; }
+        public string EncryptedFieldValue { get; set; }
+    }
     }
 

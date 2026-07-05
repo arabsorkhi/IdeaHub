@@ -1,4 +1,5 @@
 ﻿using Application.DTOs;
+using Application.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 
 namespace IdeaHub.Hubs
@@ -8,7 +9,7 @@ namespace IdeaHub.Hubs
     //چون Application نباید از SignalR خبر داشته باشد.
     //در Application فقط یک Interface تعریف کن.
     // در Infrastructure پیاده‌سازی
-    public class NotificationHubContext : Hub
+    public class NotificationHubContext : Hub, INotificationHubContext
     {
         private readonly ILogger<NotificationHubContext> _logger;
 
@@ -98,6 +99,8 @@ namespace IdeaHub.Hubs
 
         // ============= متدهای کلاینت =============
 
+     
+
         /// <summary>
         /// پیوستن به گروه
         /// </summary>
@@ -130,10 +133,13 @@ namespace IdeaHub.Hubs
             _logger.LogInformation("User {UserId} left group {GroupName}",
                 Context.UserIdentifier, groupName);
         }
+
+      
+
         /// <summary>
         /// ارسال پیام به همه (متد نمونه)
         /// </summary>
-        public async Task SendMessageToAllAsync(string message)
+        public async Task SendMessageToAllAsync(string title, string message)
         {
             await Clients.All.SendAsync("ReceiveMessage",
                 Context.UserIdentifier,
@@ -155,5 +161,9 @@ namespace IdeaHub.Hubs
             await Clients.All.SendAsync("ReceiveNotification", message);
         }
 
+        public async Task SendToGroupAsync(string groupName, string title, string message)
+        {
+            await Clients.Group(groupName).SendAsync("ReceiveNotification", title, message);
+        }
     }
 }

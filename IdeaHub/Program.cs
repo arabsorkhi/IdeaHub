@@ -7,10 +7,10 @@ using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using SignalRNotificationService = Application.Services.SignalRNotificationService;
- 
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,8 +76,8 @@ builder.Services.AddSwaggerGen(c =>
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
             };
         });
-
-    builder.Services.AddCors(options =>
+    builder.Services.AddLogging();
+builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowAll",
             builder =>
@@ -102,9 +102,9 @@ builder.Services.AddSwaggerGen(c =>
     builder.Services.AddScoped<IEncryptionService, EncryptionService>();
     builder.Services.AddScoped<IEmailService, EmailService>();
     builder.Services.AddScoped<INotificationService, SignalRNotificationService>();
+    builder.Services.AddScoped<INotificationHubContext, NotificationHubContext>();
 
-
-    var app = builder.Build();
+   var app = builder.Build();
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
